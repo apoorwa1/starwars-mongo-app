@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>MongoApp</title>
+  </head>
+  <body>
+    <h1 data-position="header">Love it? Save it!</h1>
+    <section data-position="add-quote">
+      <div class="grid-container">
+        <div class="quote-container">
+          <h2>Add Quote</h2>
+          <form action="/quotes" method="POST">
+            <input type="text" placeholder="name" name="name" />
+            <input type="text" placeholder="quote" name="quote" />
+            <button type="submit">Submit</button>
+          </form>
+        </section>
+        <section data-position="quotes">
+          <h3>Quotes</h3>
+          <ul class="quotes">
+            <!-- Loop through quotes -->
+            <% for(var i = 0; i < quotes.length; i++) {%>
+            <li class="quote">
+              <!-- Output name from the iterated quote object -->
+              <span><%= quotes[i].name %></span>:
+              <!-- Output quote from the iterated quote object -->
+              <span><%= quotes[i].quote %></span>
+            </li>
+            <% } %>
+          </ul>
+          </section>
+           <section data-position="update-quote">
+          <div>
+            <h4>Darth Vadar invades!</h4>
+            <p>Replace Yoda's quote with a Darth Vadar Quote</p>
+            <button id="update-button">Replace Quote</button>
+          </section>
+              <section data-position="delete-quote">
+            <div>
+              <h4>Remove Darth Vadar!</h4>
+              <p>Delete one Darth Vadar's quote.</p>
+              <button id="delete-button">Delete Darth Vadar's quote</button>
+              <div id="message"></div>
+            </div>
+            </section>
+          </div>
+        </div>
+        <section>
+        <div class="character">
+          <button id="swapi-button">Find A Character</button>
+          <p id="name"></p>
+          <p id="gender"></p>
+          
+        </div>
+        
+      </div>
+    </section>
+    <script src="/main.js"></script>
+  </body>
+</html>
